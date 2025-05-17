@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const LoginRegister = () => { 
+const LoginRegister = ({setAuth}: {setAuth: Function}) => { 
     const navigate = useNavigate();
     const [registerUsername, setRegisterUsername] = useState('');
     const [registerPassword, setRegisterPassword] = useState('');
@@ -26,6 +26,7 @@ const LoginRegister = () => {
             const data = await response.json();
             localStorage.setItem('token', data.token);
             setRegisterMessage('Registration successful');
+            setAuth(true);
             navigate('/'); // Redirect to home page
         } else {
             // Do not keep this, this is just for testing
@@ -47,6 +48,7 @@ const LoginRegister = () => {
             const data = await response.json();
             localStorage.setItem('token', data.token);
             setLoginMessage('Login successful');
+            setAuth(true);
             navigate('/'); // Redirect to home page
         } else {
             // Do not keep this, this is just for testing

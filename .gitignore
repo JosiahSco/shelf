@@ -26,5 +26,6 @@ dist-ssr
 obj/
 appsettings.*
 media.db
+media.db*
 bin/
 */Migrations/*Snapshot.cs
