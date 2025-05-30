@@ -5,7 +5,7 @@ const Navbar = ({ isAuthenticated }: {isAuthenticated: boolean}) => (
         <Link to="/" className="nav-link"><h1 className='h3'>Shelf</h1></Link>
         <ul className="nav nav-pills d-flex flex-row align-items-center">
             <li className="nav-item me-4">
-                <Link to="/" className="btn btn-primary">Add to Shelf</Link>
+                <Link to="/add-review" className="btn btn-primary">Add to Shelf</Link>
             </li>
             <li className="nav-item">
                 {isAuthenticated ? (

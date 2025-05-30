@@ -5,6 +5,7 @@ import LoginRegister from './pages/LoginRegister';
 import { isAuthenticated } from './utilities/utils';
 import { useState } from 'react';
 import Profile from './pages/Profile';
+import AddReview from './pages/AddReview';
 
 function App() {
   const [auth, setAuth] = useState(isAuthenticated());
@@ -16,7 +17,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login-register" element={<LoginRegister setAuth={setAuth}/>} />
-            <Route path="/profile" element={<Profile  setAuth={setAuth}/>} />
+            <Route path="/profile" element={<Profile auth={auth} setAuth={setAuth}/>} />
+            <Route path="/add-review" element={<AddReview auth={auth} />} />
           </Routes>
         </div>
       </div>

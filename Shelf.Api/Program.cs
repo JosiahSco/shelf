@@ -25,6 +25,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     options.Password.RequireNonAlphanumeric = false;
 }).AddEntityFrameworkStores<AppDbContext>();
 
+builder.Services.AddHttpClient();
+
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 builder.Services.AddAuthentication(options =>
 {

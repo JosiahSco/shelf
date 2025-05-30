@@ -29,3 +29,5 @@ media.db
 media.db*
 bin/
 */Migrations/*Snapshot.cs
+
+*.env
